@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Straight Up</title>
+	<script src="{{url_for('static', filename='lib/webcam.min.js')}}"></script>
+	<!-- <script type="text/javascript" src="lib\webcam.min.js"></script> -->
+	<script src="{{url_for('static', filename='lib/jquery-3.3.1.min.js')}}"></script>
+	<!-- <script type="text/javascript" src="lib\jquery-3.3.1.min.js"></script> -->
+</head>
+
+<!-- 320X240 jpg grayscale -->
+<body>
+
+	<h1>straight up</h1>
+	
+	<!-- <form method="POST" enctype="multipart/form-data" id="myForm">
+        <table>
+            <tr>
+                <td>Name/EmailId</td>
+                <td>:  <input type="text" name="userID"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="Upload" onclick="upload()"></td>
+            </tr>
+        </table>
+    </form> -->
+    <div id="my_camera"></div>
+    <input id="snap" type="button" onclick="snap()" value="Snap">
+    <div id="results"></div>
+    <button id="upload">Upload</button>
+		<script src="{{url_for('static', filename='connection.js')}}"></script>
+    	<!--<script type="text/javascript" src="connection.js"></script> -->
+
+</body>
+</html>

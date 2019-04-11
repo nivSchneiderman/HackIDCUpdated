@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 70px;
+}
+
+.gauge{
+    margin: 0 28%;
+    margin-bottom: 20px;  
+}
+
+#min-header{
+        border-bottom: 2px solid #03a9f461;
+}
+
+#main-box{
+    width: 800px;
+}
+
+.btn1{
+    margin: 32px;
+}
+
+#blue{
+   background-color: #2e282ad6;
+}
+
+.jumbotron{
+    margin-bottom: 0px;
+    padding: 30px;
+    background-color: white;
+}
+
+#my_camera{
+    box-shadow: 5px 10px 8px #888888;
+}
+
+
+h4{
+    color: wheat;
+    text-align:center; 
+    margin-bottom: 13px; 
+}
