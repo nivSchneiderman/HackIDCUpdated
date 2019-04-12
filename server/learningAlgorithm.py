@@ -49,35 +49,37 @@ def convert_to_one_hot_encoding(labels_arr, first_class, num_classes):
 
 
 def load_train_data():
-    train_data_directory = os.listdir('../Data/trainData')
+    data_path = 'C:/repo/HackIDC data/Data/'
+    train_data_directory = os.listdir(data_path + 'trainData')
     images = []
     labels = []
 
-    for dir in train_data_directory:
-        filesList = os.listdir('../Data/trainData/' + dir)
-        for f in filesList:
-            filePath = '../Data/trainData/' + dir + '/' + f
+    for directory in train_data_directory:
+        files_list = os.listdir(data_path + 'trainData/' + directory)
+        for f in files_list:
+            file_path = data_path + 'trainData/' + directory + '/' + f
             if f.endswith('.jpg'):
                 img_label = get_label_from_name(f)
                 labels.append(img_label)
-                img = np.asarray(Image.open(filePath))
+                img = np.asarray(Image.open(file_path))
                 images.append(img)
 
     return images, labels
 
 
 def load_test_data():
-    test_data_directory = os.listdir('../Data/testData')
+    data_path = 'C:/repo/HackIDC data/Data/'
+    test_data_directory = os.listdir(data_path + 'testData')
     test_images = []
     test_labels = []
-    testFilesList = os.listdir('../Data/testData')
+    test_files_list = os.listdir(data_path + 'testData')
 
-    for f in testFilesList:
-        filePath = '../Data/testData/' + f
+    for f in test_files_list:
+        file_path = data_path + 'testData/' + f
         if f.endswith('.jpg') or f.endswith('.jpeg'):
             img_label = get_label_from_name(f)
             test_labels.append(img_label)
-            img = np.asarray(Image.open(filePath))
+            img = np.asarray(Image.open(file_path))
             test_images.append(img)
 
     return test_images, test_labels
@@ -125,7 +127,7 @@ def load_data_and_set_model_layers(input_model):
 
 
 def get_model(produce_new_model=False):
-    # from here
+
     if os.path.isfile('saved_model.h5') and not produce_new_model:
         model_in = load_model('saved_model.h5')
         print('Loading saved model')
@@ -196,7 +198,7 @@ def get_labels_array_from_one_hot_array(labels_in_one_hot):
 
     return result
 
-
+'''
 model = get_model()
 
 test_images, test_labels = load_test_data()
@@ -206,3 +208,4 @@ print(test_labels)
 predicted_labels = get_labels_from_class_numbers(model.predict_classes([test_images]))
 print('Test predicted classes: ')
 print(predicted_labels)
+'''
