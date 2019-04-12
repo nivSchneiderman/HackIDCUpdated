@@ -56,13 +56,16 @@ def load_train_data():
 
     for directory in train_data_directory:
         files_list = os.listdir(data_path + 'trainData/' + directory)
+        i = 0
+
         for f in files_list:
             file_path = data_path + 'trainData/' + directory + '/' + f
-            if f.endswith('.jpg'):
+            if f.endswith('.jpg') or f.endswith('.jpeg'):
                 img_label = get_label_from_name(f)
                 labels.append(img_label)
                 img = np.asarray(Image.open(file_path))
                 images.append(img)
+            i += 1
 
     return images, labels
 
@@ -73,6 +76,7 @@ def load_test_data():
     test_images = []
     test_labels = []
     test_files_list = os.listdir(data_path + 'testData')
+    i = 0
 
     for f in test_files_list:
         file_path = data_path + 'testData/' + f
@@ -81,6 +85,7 @@ def load_test_data():
             test_labels.append(img_label)
             img = np.asarray(Image.open(file_path))
             test_images.append(img)
+        i += 1
 
     return test_images, test_labels
 

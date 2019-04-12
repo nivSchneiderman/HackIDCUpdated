@@ -1,142 +1,4 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Main</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
-    <script src="{{url_for('static', filename='lib/webcam.min.js')}}"></script>
-    <script src="{{url_for('static', filename='lib/jquery-3.3.1.min.js')}}"></script>
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-</head>
-<body> -->
-    
-       <!--  <header>
-            <img src="/static/images/logo.PNG" alt="23andfour logo" class="logo">
 
-            <nav>
-                <a href="#" class="hide-desktop">
-                    <img src="/static/images/ham.svg" alt="toggle menu" class="menu" id="menu">
-                </a>
-
-                <ul class="show-desktop hide-mobile" id="nav">
-                    <li id="exit" class="exit-btn hide-desktop">
-                        <img src="images/exit.svg" alt="exit menu">
-                    </li>
-                    <li><a href="#">Settings</a></li>
-                    <li><a href="#">Report</a></li>
-                    <li><a href="#">Goal</a></li>
-                    <li><a href="#">About</a></li>
-                </ul>
-            </nav>
-        </header> -->
-   
-        <!-- ########################################################################## -->
-
-
-       <!--  <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mylinks" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-            <a href="#" class="navbar-brand"><i class="fas fa-camera"></i>IMGS</a>
-            
-        </div>
-
-        
-        <div class="container">
-        all of the content in that div is going to collapse. the id of the div is to tell the hamburger what to show
-            <div class="collapse navbar-collapse" id="mylinks">
-                <ul class="nav navbar-nav">
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-                
-                    <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Sign Up</a></li>
-                    <li><a href="#">Login</a></li>
-                </ul>
-            </div>  
-        </div>
-    </nav> -->
-
-   <!--  <div class="container">
-
-        <div id="main-box">
-         <div id="my_camera"></div>
-           
-        </div>
-
-        <script src="{{url_for('static', filename='connection.js')}}"></script>
-        <div id="panel">
-            
-        </div> -->
-
-
-
-<!-- ############################################################################### -->
-
-
-
-    <!-- <div class="container"> -->
-        <!-- <section>
-            <img src="/static/images/spine.PNG" alt="server graphic" class="server">
-            <h1>Status Bar</h1>
-            <p class="subhead">keep track of your improvment</p>
-        </section>
-    </div>
-	
-	<div class="container">
-			<h2>Sit up stright!</h2>
-            <a href="#" class="stop">Start / pause</a>
-            <a href="#" class="end">End session get report</a>
-    </div>
-		
-    
-
-
-    <footer>
-        <div class="footer-container">
-            <div class="container">
-                <a href="#">
-                    <img src="images/logo.PNG" class="logo" alt="logo">
-                </a>
-                <p class="address">IDC - Herzileya<br>IL</p>
-                <ul class="footer-links">
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
- -->
-
-   <!--  <script>
-    
-        var menu = document.getElementById('menu');
-        var nav = document.getElementById('nav');
-        var exit = document.getElementById('exit');
-
-        menu.addEventListener('click', function(e) {
-            nav.classList.toggle('hide-mobile');
-            e.preventDefault();
-        });
-
-        exit.addEventListener('click', function(e) {
-            nav.classList.add('hide-mobile');
-            e.preventDefault();
-        });
-
-    </script> -->
-  <!--   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-</body>
-</html> -->
 
 <!DOCTYPE html>
 <html>
@@ -155,11 +17,12 @@
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
-
+<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Patrick+Hand" rel="stylesheet">
 
 </head>
 <body>
-    <!-- Picture from the site https://unsplash.com/  -->
+    <embed src="/static/sounds/beep1.wav" autostart="false" width="0" height="0" id="beep_sound"
+enablejavascript="true">
 
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="navbar-header">
@@ -192,7 +55,7 @@
         </div>
     </nav>
 
-    
+    <h1>Time To Straight Up!</h1>
         <div class = "jumbotron" style="clear: both;">
             <div class="container" id="main-box">
             <div class = "row">
@@ -203,10 +66,10 @@
                 </div>
                 <div class="col-sm-3">
                     <div class = "row">
-                        <button class="btn btn1 btn-success">Start</button>
+                        <button id="start_btn" class="btn btn1 btn-primary btn-rounded btn-lg">Pause</button>
                     </div>
                     <div class = "row">
-                        <button class="btn btn1 btn-info">Get Report</button>
+                        <button class="btn btn1 btn-danger btn-rounded btn-lg">Get Report</button>
                     </div>
                         
                     
@@ -216,20 +79,20 @@
                     <p id="min-header">Quick Settings</p>
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox" checked data-toggle="toggle">
+                        <input type="checkbox" id="soundOn" checked data-toggle="toggle">
                         Sound
                       </label>
                     </div>
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox" checked  data-toggle="toggle">
+                        <input type="checkbox" id="videoOn" checked  data-toggle="toggle">
                         Video
                       </label>
                     </div>
                 </div>
             </div>
              
-            <script src="{{url_for('static', filename='connection.js')}}"></script>
+            
             <div id="panel">
 
 
@@ -243,16 +106,16 @@
             <div  class="container">
                 <div class = "row">
                     <div class="col-sm-6">
-                        <h4>Eye Distance</h4>
-                        <div id="gaugeDemo" class="gauge gauge-big gauge-green">
+                        <h3>Eye Distance</h3>
+                        <div id="gauge1" class="gauge gauge-big gauge-green">
                             <div class="gauge-arrow" data-percentage="40"
                                  style="transform: rotate(0deg);"></div>
                         </div>
                         
                     </div>
                      <div class="col-sm-6">
-                        <h4>Postur</h4>
-                        <div id="gaugeDemo" class="gauge gauge-big gauge-green">
+                        <h3>Postur</h3>
+                        <div id="gauge2" class="gauge gauge-big gauge-green">
                             <div class="gauge-arrow" data-percentage="40"
                                  style="transform: rotate(0deg);"></div>
                             </div>
@@ -271,16 +134,17 @@
 
 <!-- <script src="js/cmGauge.js"></script> -->
 <script src="{{url_for('static', filename='lib/cmGauge.js')}}"></script>
-<script type="text/javascript">
+<script src="{{url_for('static', filename='connection.js')}}"></script>
+<!-- <script type="text/javascript">
     $(function () {
         $("button").click(function () {
             var randomNum = Math.floor((Math.random() * 100));
-            $('#gaugeDemo .gauge-arrow').trigger('updateGauge', randomNum);
+            $('#gauge1 .gauge-arrow').trigger('updateGauge', randomNum);
         });
 
         $('#gaugeDemo .gauge-arrow').cmGauge();
     });
-</script>
+</script> -->
 
 </body>
 </html>

@@ -19,6 +19,7 @@ body {
 
 .btn1{
     margin: 32px;
+    width: 130px;
 }
 
 #blue{
@@ -29,6 +30,8 @@ body {
     margin-bottom: 0px;
     padding: 30px;
     background-color: white;
+    border: 1px solid #0000001a;
+    box-shadow: 5px 4px 10px #e86767;
 }
 
 #my_camera{
@@ -36,8 +39,48 @@ body {
 }
 
 
-h4{
+h3{
     color: wheat;
     text-align:center; 
-    margin-bottom: 13px; 
+    margin-bottom: 13px;
+    font-family: 'Patrick Hand', cursive;
+ 
+}
+
+.btn-outline-primary {
+  color: #007bff;
+  background-color: transparent;
+  background-image: none;
+  border-color: #007bff;
+}
+
+.btn-outline-primary:hover {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-outline-primary.disabled, .btn-outline-primary:disabled {
+  color: #007bff;
+  background-color: transparent;
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active,
+.show > .btn-outline-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled):active:focus, .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
+
+h1{
+    font-family: 'Nanum Gothic', sans-serif;
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 23px;
+    margin-top: 0px;
 }

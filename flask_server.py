@@ -2,6 +2,7 @@ import app_image
 from flask import Flask, request, jsonify, render_template
 import json
 
+counter = 0
 
 def generate_json(*args):
     dict_to_json = dict()
@@ -26,8 +27,10 @@ def run_flask_server(host, port, debug, model, graph):
     @app.route('/process', methods=['POST'])
     def process():
         if request.method == 'POST':
+            global counter
+            counter += 1
             request_image_file_data = jsonify(request.form['file'])
-            image = app_image.AppImage(request_image_file_data, model, graph)
+            image = app_image.AppImage(request_image_file_data, model, graph, counter)
             classification = image.classify_image()
             message = app_image.AppImage.explain_classification(classification)
             return_json = generate_json(('class', classification.name), ('message', message))

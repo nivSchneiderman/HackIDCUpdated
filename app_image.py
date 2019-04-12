@@ -13,10 +13,11 @@ class Classification(Enum):
 
 
 class AppImage:
-    def __init__(self, request_image_file_data, model, graph):
+    def __init__(self, request_image_file_data, model, graph, counter):
         _, image_string = request_image_file_data.json.split(',')
         self.image_bytes = base64.b64decode(str.encode(image_string))
         self.image_colored = Image.open(io.BytesIO(self.image_bytes))
+        # self.image_colored.save('C:/repo/Dynamic_Data/Class_C/Class_C_{0}.jpg'.format(str(counter)))
         self.image_grayscale = self.image_colored.convert('LA')
         self._classification = None
         self._model = model
